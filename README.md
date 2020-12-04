@@ -17,8 +17,8 @@ _This application monitors your plant watering needs based on the current weathe
 | Behavior | Input | Output |
 |---|---|---|
 | The user is welcomed with an introduction |   |   |
-| The user is prompted with a list of options: enter a new plant, see plants watering status, download plant information|   |   |
-| If the user wants to enter a new plant, they are prompted with options of plants (choose which plant they are caring for)|   |   |
+| The user is prompted to enter a new plant|   |   |
+| The user is prompted with options of plants (choose which plant they are caring for)|   |   |
 | The program stores this info, creates a new instance of plant object|   |   |
 | The user is prompted to enter which city they live in|   |   |
 | Weather map api accepts call with the city as a param|   |  |
