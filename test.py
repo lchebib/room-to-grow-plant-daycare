@@ -17,10 +17,11 @@ class PlantTests(unittest.TestCase):
     self.assertEqual(self.new_plant.dryness_level, 43)
 
   def test_weather_effect(self):
-    self.new_plant.location = "Portland"
-    self.assertIsInstance(self.new_plant.weather_effect(), dict)
-    
+    testDict = self.new_plant.weather_effect(97201)
+    self.assertIsInstance(self.new_plant.weather_effect(97201), dict)
+    self.assertIsTrue(all(testDict["Temperature"]))
   # def test_when_to_water(self):
+
 
 if __name__ == '__main__':
   unittest.main()

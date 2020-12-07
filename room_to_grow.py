@@ -1,3 +1,5 @@
+import requests
+
 class Plant:
 
   def __init__(self, breed, name, location, dryness_level = 100):
@@ -21,17 +23,24 @@ class Plant:
     self.dryness_level = round((last_watered / maximum) * 100)
     return self.dryness_level
 
-  def weather_effect(self):
-    temp = 0
-    sky = 0
-    humidity = 0
+  def weather_effect(self, zip):
+    key = ""
+
+    url = "http://api.weatherapi.com/v1/current.json"
+    data = requests.get(
+        url,
+        headers={"Accept": "application/json"},
+        params={"key": key,
+        "q": zip}
+        ).json()
+    results = data['current']
+    temp = results['temp_c']
+    sky = results["condition"]["text"]
+    humidity = results["humidity"]
     weather = {"Temperature": temp, "Sky": sky, "Humidity": humidity}
     return weather
 
+
   # def when_to_water(self):
   #   pass
-    
-
-
-
-
+  # input("Enter your Zip Code or the first 3 digits of your Postal Code: ")
