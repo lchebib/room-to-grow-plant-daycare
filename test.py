@@ -19,9 +19,12 @@ class PlantTests(unittest.TestCase):
   def test_weather_effect(self):
     testDict = self.new_plant.weather_effect(97201)
     self.assertIsInstance(self.new_plant.weather_effect(97201), dict)
-    self.assertIsTrue(all(testDict["Temperature"]))
-  # def test_when_to_water(self):
+    self.assertIsNotNone(testDict["Temperature"])
+    self.assertIsNotNone(testDict["Sky"])
+    self.assertIsNotNone(testDict["Humidity"])
 
+    
+  # def test_when_to_water(self):
 
 if __name__ == '__main__':
   unittest.main()

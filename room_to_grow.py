@@ -1,4 +1,5 @@
-import requests
+import requests 
+from API import APIkey
 
 class Plant:
 
@@ -24,13 +25,12 @@ class Plant:
     return self.dryness_level
 
   def weather_effect(self, zip):
-    key = ""
 
     url = "http://api.weatherapi.com/v1/current.json"
     data = requests.get(
         url,
         headers={"Accept": "application/json"},
-        params={"key": key,
+        params={"key": APIkey,
         "q": zip}
         ).json()
     results = data['current']
@@ -43,4 +43,5 @@ class Plant:
 
   # def when_to_water(self):
   #   pass
-  # input("Enter your Zip Code or the first 3 digits of your Postal Code: ")
+
+  # frontend to store zip = input("Enter your Zip Code or the first 3 digits of your Postal Code: ")
