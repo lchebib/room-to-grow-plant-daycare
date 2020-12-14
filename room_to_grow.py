@@ -3,9 +3,9 @@ from API import APIkey
 
 class Plant:
 
-  def __init__(self, breed, name, location, dryness_level = 100):
-    self.breed = breed
+  def __init__(self, name, breed, location, dryness_level = 100):
     self.name = name
+    self.breed = breed
     self.location = location
     self.dryness_level = dryness_level
     
@@ -45,3 +45,5 @@ class Plant:
   #   pass
 
   # frontend to store zip = input("Enter your Zip Code or the first 3 digits of your Postal Code: ")
+
+  
